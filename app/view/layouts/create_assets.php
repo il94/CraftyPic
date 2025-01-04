@@ -1,3 +1,4 @@
+<link rel='icon' href='/public/favicon.ico' type='image/x-icon'> 
 <link rel="stylesheet" type="text/css" href="view/assets/create.css">
 
 <link rel="stylesheet" type="text/css" href="view/assets/logo.css">
