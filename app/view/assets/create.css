@@ -237,6 +237,7 @@
 	margin-bottom: 10px;
 
 	width: 100%;
+	height: 90px;
 }
 #action-bar > .window-button {
 	margin: 0;
@@ -252,6 +253,7 @@
 	margin-bottom: 10px;
 
 	width: 100%;
+	height: 90px;
 }
 
 #mobile-action-bar {
@@ -262,6 +264,8 @@
 	margin-bottom: 10px;
 
 	width: 100%;
+	height: 67.5px;
+
 }
 
 .create-little-button {
