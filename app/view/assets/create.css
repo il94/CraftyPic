@@ -267,8 +267,8 @@
 .create-little-button {
 	padding: 10px;
 
-	width: 50.4px;
-	height: 50.4px;
+	max-width: 50.4px;
+	max-height: 50.4px;
 
 	border-radius: 50%;
 
@@ -276,8 +276,8 @@
 }
 
 .create-medium-button {
-	width: 67.5px;
-	height: 67.5px;
+	max-width: 67.5px;
+	max-height: 67.5px;
 
 	border-radius: 50%;
 	
@@ -285,8 +285,8 @@
 }
 
 .create-big-button {
-	width: 90px;
-	height: 90px;
+	max-width: 90px;
+	max-height: 90px;
 
 	border-radius: 50%;
 	
