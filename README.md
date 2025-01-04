@@ -6,7 +6,7 @@
 	Link
 </h1>
 <p align="center">
-	https://camagru.ilandols.com/
+	https://craftypic.ilandols.com/
 </p>
 
 ## Description
