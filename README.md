@@ -2,6 +2,13 @@
 	<img src="other/readme_images/banner.gif">
 </div>
 
+<h1 align="center">
+	Link
+</h1>
+<p align="center">
+	https://camagru.ilandols.com/
+</p>
+
 ## Description
 <p align="center">
 	Do you prefer Instagram or Snapchat ? It doesn't matter, because CraftyPic gathers the best of both of them !
