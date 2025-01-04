@@ -16,7 +16,12 @@
 		</div>
 		<div class="pic-body-recto model">
 			<div id="video-container">
-				<video id="video"></video>
+				<video 
+					id="video"
+					autoplay
+					playsinline
+					muted
+					></video>
 			</div>
 			<div id="camera-off">
 				<p>Camera off</p>
