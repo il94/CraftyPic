@@ -143,7 +143,7 @@ class HomeService {
 		$headers = "From: noreply@craftypic.com\r\n";
 		$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 		$subject = 'Someone liked your pic !';
-		$homeLink = 'http://localhost:8080';
+		$homeLink = $_ENV['URL'];
 		$message = '
 			<html>
 			<head>
@@ -166,7 +166,7 @@ class HomeService {
 		$headers = "From: noreply@craftypic.com\r\n";
 		$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 		$subject = 'Someone commented your pic !';
-		$homeLink = 'http://localhost:8080';
+		$homeLink = $_ENV['URL'];
 		$message = '
 			<html>
 			<head>

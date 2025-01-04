@@ -151,7 +151,7 @@ class AuthController
 				$body = require_once('view/auth_updated.php');
 			else if ($state === "redirect") {
 				$body = require_once('view/auth_login.php');
-				header('Location: http://localhost:8080/?page=auth&route=login');
+				header('Location: ' . $_ENV['URL'] . '/?page=auth&route=login');
 			}
 		}
 		else {
