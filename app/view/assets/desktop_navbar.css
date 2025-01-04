@@ -32,6 +32,8 @@
 }
 #desktop-navbar-icons > button:not(:last-child) {
 	margin-right: 6px;
+
+	width: 51.52px;
 }
 
 #logout-hidden-button {

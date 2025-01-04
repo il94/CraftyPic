@@ -325,6 +325,9 @@
 		padding: 10px;
 
 		width: 50.4px;
+		height: 50.4px;
+		aspect-ratio: 1;
+
 	}
 	.create-big-button {
 		padding: 12.5px;
@@ -357,6 +360,8 @@
 		padding: 12.5px;
 
 		width: 67.5px;
+		height: 67.5px;
+		aspect-ratio: 1;
 	}
 	.create-big-button {
 		padding: 15px;
@@ -387,6 +392,8 @@
 		padding: 12.5px;
 
 		width: 67.5px;
+		height: 67.5px;
+		aspect-ratio: 1;
 	}
 	.create-big-button {
 		padding: 15px;
