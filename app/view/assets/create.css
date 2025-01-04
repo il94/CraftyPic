@@ -267,8 +267,8 @@
 .create-little-button {
 	padding: 10px;
 
-	max-width: 50.4px;
-	max-height: 50.4px;
+	width: 50.4px;
+	aspect-ratio: 1;
 
 	border-radius: 50%;
 
@@ -276,8 +276,8 @@
 }
 
 .create-medium-button {
-	max-width: 67.5px;
-	max-height: 67.5px;
+	width: 67.5px;
+	aspect-ratio: 1;
 
 	border-radius: 50%;
 	
@@ -285,8 +285,8 @@
 }
 
 .create-big-button {
-	max-width: 90px;
-	max-height: 90px;
+	width: 90px;
+	aspect-ratio: 1;
 
 	border-radius: 50%;
 	
@@ -330,6 +330,8 @@
 		padding: 12.5px;
 
 		width: 67.5px;
+		height: 67.5px;
+		aspect-ratio: 1;
 	}
 }
 /* DESKTOP 1 */
@@ -360,6 +362,8 @@
 		padding: 15px;
 
 		width: 90px;
+		height: 90px;
+		aspect-ratio: 1;
 	}
 }
 /* DESKTOP 2 */
@@ -388,6 +392,8 @@
 		padding: 15px;
 
 		width: 90px;
+		height: 90px;
+		aspect-ratio: 1;
 	}
 }
 
