@@ -105,6 +105,7 @@
 	border-radius: 45px;
 
 	overflow-x: scroll;
+	overflow-y: hidden;
 
 	background-color: var(--bar-bg);
 }
@@ -125,6 +126,8 @@
 
 	width: 85%;
 	height: 126px;
+
+	overflow-y: hidden;
 }
 
 #preview-sticker,
@@ -144,6 +147,7 @@
 	border-radius: 45px 45px 0 0;
 
 	overflow-x: scroll;
+	overflow-y: hidden;
 
 	background-color: var(--bar-bg);
 }
@@ -272,6 +276,7 @@
 }
 
 .create-medium-button {
+	width: 67.5px;
 	aspect-ratio: 1;
 
 	border-radius: 50%;
@@ -280,6 +285,7 @@
 }
 
 .create-big-button {
+	width: 90px;
 	aspect-ratio: 1;
 
 	border-radius: 50%;
