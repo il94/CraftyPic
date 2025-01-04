@@ -237,7 +237,6 @@
 	margin-bottom: 10px;
 
 	width: 100%;
-	height: 90px;
 }
 #action-bar > .window-button {
 	margin: 0;
@@ -253,7 +252,6 @@
 	margin-bottom: 10px;
 
 	width: 100%;
-	height: 90px;
 }
 
 #mobile-action-bar {
@@ -264,15 +262,13 @@
 	margin-bottom: 10px;
 
 	width: 100%;
-	height: 67.5px;
-
 }
 
 .create-little-button {
 	padding: 10px;
 
 	width: 50.4px;
-	aspect-ratio: 1;
+	height: 50.4px;
 
 	border-radius: 50%;
 
@@ -281,7 +277,7 @@
 
 .create-medium-button {
 	width: 67.5px;
-	aspect-ratio: 1;
+	height: 67.5px;
 
 	border-radius: 50%;
 	
@@ -290,7 +286,7 @@
 
 .create-big-button {
 	width: 90px;
-	aspect-ratio: 1;
+	height: 90px;
 
 	border-radius: 50%;
 	
