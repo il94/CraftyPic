@@ -11,7 +11,7 @@
 
 ## Description
 <p align="center">
-	Do you prefer Instagram or Snapchat ? It doesn't matter, because CraftyPic gathers the best of both of them ! This project, originally camagru, has been completed as part of the 42 School curriculum.
+	Do you prefer Instagram or Snapchat ? It doesn't matter, because CraftyPic gathers the best of both of them ! <br> This project, originally camagru, has been completed as part of the 42 School curriculum.
 </p>
 
 ## Local installation
