@@ -6,8 +6,8 @@ tls_trust_file	/etc/ssl/certs/ca-certificates.crt
 logfile			/var/log/msmtp.log
 
 account		default
-host		smtp.gmail.com
-port		587
-from		noreply.craftypic@gmail.com
-user		noreply.craftypic@gmail.com
-password	ohyf bcqd wpfy uqku
+host
+port
+from
+user
+password
