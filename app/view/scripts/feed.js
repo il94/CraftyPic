@@ -119,3 +119,21 @@ const observer = new IntersectionObserver(handlePicObserver, {
 	rootMargin: '100px'
 })
 observer.observe(picObserver);
+
+// function autoScroll(speed = 1, delay = 2000) {
+// 	const feed = document.getElementById("feed");
+// 	if (!feed) return;
+
+// 	setTimeout(() => {
+// 			let scrollInterval = setInterval(() => {
+// 					if (feed.scrollTop + feed.clientHeight >= feed.scrollHeight) {
+// 							feed.scrollTo({ top: 0, behavior: 'instant' }); // Remonte instantanément en haut
+// 					} else {
+// 							feed.scrollBy({ top: speed, behavior: 'smooth' });
+// 					}
+// 			}, 50); // Ajuste la fréquence du scroll (en ms)
+// 	}, delay); // Délai avant de commencer le scroll
+// }
+
+// // Appelle la fonction avec une vitesse et un délai personnalisables
+// autoScroll(20, 3000); // Démarre après 3 secondes
