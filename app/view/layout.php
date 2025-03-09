@@ -18,8 +18,18 @@
 
 	<?php $headers; ?>
 
-	<link rel="icon" type="image/x-icon" href="/view/assets/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/public/favicon.ico">
 	<title>CraftyPic</title>
+	<meta
+		name="description"
+		lang="fr"
+		content="Bienvenue sur CraftyPic ! Customisez vos photos et partagez les à vos amis. Rejoignez la communauté et laissez parler votre créativité !"
+	/>
+	<meta
+		name="description"
+		lang="en"
+		content="Welcome to CraftyPic ! Customize your photos and share them with your friends. Join the community and let your creativity shine !"
+	/>
 </head>
 
 <body>
