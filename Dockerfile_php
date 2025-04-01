@@ -21,10 +21,10 @@ COPY app /var/www/html
 RUN chmod 777 -R /var/www/html \
 	&& chown -R www-data:www-data /var/www/html
 
-COPY msmtprc /etc/msmtprc
-RUN chown root:msmtp /etc/msmtprc \
-    && chmod 640 /etc/msmtprc \
-    && mkdir -p /var/log \
-    && touch /var/log/msmtp.log \
-    && chown www-data:www-data /var/log/msmtp.log \
-    && chmod 600 /var/log/msmtp.log
+# COPY msmtprc /etc/msmtprc
+# RUN chown root:msmtp /etc/msmtprc \
+#     && chmod 640 /etc/msmtprc \
+#     && mkdir -p /var/log \
+#     && touch /var/log/msmtp.log \
+#     && chown www-data:www-data /var/log/msmtp.log \
+#     && chmod 600 /var/log/msmtp.log
