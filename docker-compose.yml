@@ -22,7 +22,7 @@ services:
     volumes:
       # - ./app:/var/www/html
       - uploads:/var/www/html/uploads
-      - msmtprc:/etc/msmtprc
+      - ./msmtprc:/etc/msmtprc
     env_file:
       - .env
 
