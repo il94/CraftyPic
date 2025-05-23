@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_nginx
-    # ports:
-    #   - "8080:80"
+    ports:
+      - "4002:80"
     volumes:
       # - ./app:/var/www/html
       - uploads:/var/www/html/uploads
