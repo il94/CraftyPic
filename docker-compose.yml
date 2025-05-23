@@ -30,9 +30,9 @@ services:
     image: mariadb
     restart: always
     ports:
-      - '3302:3306'
+      - '5002:3306'
     expose:
-      - '3302'
+      - '5002'
     env_file:
       - .env
     volumes:
