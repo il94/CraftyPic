@@ -2,6 +2,15 @@
 # La DB (MariaDB) est désormais une ressource Coolify séparée, plus dans cette image.
 FROM php:7.4-fpm
 
+# php:7.4 = Debian 11 (bullseye), désormais EOL : les dépôts sont passés sur
+# archive.debian.org (sinon apt renvoie des 404). On repointe + on désactive la
+# vérif de date des Release archivés, et on retire la suite -updates (absente de l'archive).
+RUN sed -i \
+		-e 's|http://deb.debian.org/debian|http://archive.debian.org/debian|g' \
+		-e '/bullseye-updates/d' \
+		/etc/apt/sources.list \
+	&& echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid
+
 # Dépendances système : nginx, supervisor (lance php-fpm + nginx ensemble),
 # msmtp (envoi d'emails), et les libs pour les extensions PHP (gd, zip, imagick).
 RUN apt-get update \
