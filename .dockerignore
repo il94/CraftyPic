@@ -1,0 +1,15 @@
+.git
+.gitignore
+.DS_Store
+**/.DS_Store
+docker-compose.yml
+Dockerfile_php
+Dockerfile_nginx
+Dockerfile_mysql
+init.sql
+README.md
+.env
+.env-example
+msmtprc
+msmtprc-example
+other
