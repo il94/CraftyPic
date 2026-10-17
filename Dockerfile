@@ -45,7 +45,7 @@ RUN mkdir -p /var/www/html/uploads \
 # Supervisor : php-fpm + nginx dans le même conteneur
 COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# nginx écoute sur 4002 (cf. nginx.conf) → Port à exposer côté Coolify
-EXPOSE 4002
+# nginx écoute sur 80 (cf. nginx.conf) → Port à exposer côté Coolify
+EXPOSE 80
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
