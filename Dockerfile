@@ -1,15 +1,13 @@
 # CraftyPic · image unique nginx + php-fpm (remplace le docker-compose nginx/php).
 # La DB (MariaDB) est désormais une ressource Coolify séparée, plus dans cette image.
-FROM php:7.4-fpm
-
-# php:7.4 = Debian 11 (bullseye), désormais EOL : les dépôts sont passés sur
-# archive.debian.org (sinon apt renvoie des 404). On repointe + on désactive la
-# vérif de date des Release archivés, et on retire la suite -updates (absente de l'archive).
-RUN sed -i \
-		-e 's|http://deb.debian.org/debian|http://archive.debian.org/debian|g' \
-		-e '/bullseye-updates/d' \
-		/etc/apt/sources.list \
-	&& echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid
+#
+# PHP 8.3 (Debian 12 bookworm, supporté jusqu'à fin 2027). Corrige les deux RCE
+# non authentifiées CVE-2026-109618 et CVE-2026-109619 (advisory php.net du
+# 2026-10-21) : la 8.3-fpm embarque 8.3.36+. L'ancienne base php:7.4-fpm était
+# EOL depuis nov. 2022, vulnérable, et sans release officielle corrigée (7.4
+# n'a eu qu'un backport source). bookworm n'étant pas EOL, le repointage des
+# dépôts vers archive.debian.org n'est plus nécessaire et a été retiré.
+FROM php:8.3-fpm
 
 # Dépendances système : nginx, supervisor (lance php-fpm + nginx ensemble),
 # msmtp (envoi d'emails), et les libs pour les extensions PHP (gd, zip, imagick).
