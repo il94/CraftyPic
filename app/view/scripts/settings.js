@@ -1,3 +1,5 @@
+import { trackEvent } from "./analytics.js";
+
 const returnHomeButton = document.getElementById("return-home");
 
 returnHomeButton?.addEventListener('click', () => {
@@ -39,6 +41,7 @@ for (const logoutButton of [logoutButtonText, mobileLogoutButton]) {
 		xhr.onreadystatechange = () => {
 			if (xhr.readyState === 4) {
 				if (xhr.status === 200) {
+					trackEvent("logout");
 					window.location.href = "/login";
 				}
 				else {
@@ -47,7 +50,7 @@ for (const logoutButton of [logoutButtonText, mobileLogoutButton]) {
 				}
 			}
 		}
-	
+
 		xhr.send();
 	})
 }
@@ -100,10 +103,14 @@ if (form) {
 				xhr.onreadystatechange = () => {
 					if (xhr.readyState === 4) {
 						if (xhr.status === 200) {
-							if (form.name === "username")
+							if (form.name === "username") {
+								trackEvent("settings-username-update");
 								window.location.href = `/settings/updated?data=${encodeURIComponent(form.name)}`;
-							else
+							}
+							else {
+								trackEvent("settings-email-update-request");
 								window.location.href = `/settings/update_start?email=${encodeURIComponent(value)}`;
+							}
 						}
 						else {
 							const response = JSON.parse(xhr.responseText);
@@ -144,6 +151,7 @@ if (form) {
 				xhr.onreadystatechange = () => {
 					if (xhr.readyState === 4) {
 						if (xhr.status === 200) {
+							trackEvent("settings-password-update");
 							window.location.href = `/login`;
 						}
 						else {
@@ -208,6 +216,7 @@ if (form) {
 				xhr.onreadystatechange = () => {
 					if (xhr.readyState === 4) {
 						if (xhr.status === 200) {
+							trackEvent("settings-avatar-update");
 							window.location.href = `/settings/updated?data=avatar`;
 						}
 						else {
@@ -240,6 +249,10 @@ if (form) {
 				xhr.onreadystatechange = () => {
 					if (xhr.readyState === 4) {
 						if (xhr.status === 200) {
+							trackEvent("settings-notification-toggle", {
+								type: paramName === "notification_like" ? "like" : "comment",
+								enabled: paramValue === 1,
+							});
 						}
 						else {
 							const response = JSON.parse(xhr.responseText);
@@ -283,6 +296,7 @@ sendPasswordReinitialization?.addEventListener('click', () => {
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 201) {
+				trackEvent("settings-password-reset-request");
 				const response = JSON.parse(xhr.responseText);
 				window.location.href = `/settings/reinitialization-start?email=${encodeURIComponent(response)}`;
 			}

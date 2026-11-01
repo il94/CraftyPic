@@ -9,7 +9,11 @@
 	<link href="https://fonts.googleapis.com/css2?family=Twinkle+Star&display=swap" rel="stylesheet">
 
 	<meta name="csrf-token" content="<?php echo $_SESSION['csrf_token']; ?>">
-	
+
+	<?php $umamiTag = (strpos($_ENV['URL'] ?? '', 'localhost') !== false) ? 'development' : 'production'; ?>
+	<script defer src="https://umami.ilandols.com/script.js"
+		data-website-id="e9e7d0a7-d75d-4a42-a9d2-f356364e1d0a" data-tag="<?php echo $umamiTag; ?>"></script>
+
 	<link rel="stylesheet" type="text/css" href="/view/assets/index.css">
 	<link rel="stylesheet" type="text/css" href="/view/assets/colors.css">
 

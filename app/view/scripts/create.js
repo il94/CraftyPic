@@ -1,4 +1,5 @@
 import { createPicMini, getRandomColor } from "./pic.js";
+import { trackEvent } from "./analytics.js";
 
 /* ANGLE POPUP */
 
@@ -24,6 +25,7 @@ logoutButton?.addEventListener('click', () => {
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
+				trackEvent("logout");
 				window.location.href = "/login";
 			}
 			else {
@@ -248,6 +250,8 @@ inputFile.addEventListener('change', (event) => {
    const file = fileInput.files[0];
 
    if (file) {
+		trackEvent("editor-image-import");
+
 		const reader = new FileReader();
 
 		reader.onload = async (e) => {
@@ -333,6 +337,8 @@ for (const cameraButton of cameraButtons) {
 	cameraButton.addEventListener("click", () => {
 		if (cameraButton.classList.contains("blocked"))
 			return
+
+		trackEvent("editor-photo-capture");
 
 		// Dessine la photo prise
 		context.save();
@@ -489,6 +495,7 @@ for (const publishButton of publishButtons) {
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4) {
 					if (xhr.status === 201) {
+						trackEvent("pic-create", { count: canvasList.length });
 						window.location.href = "/";
 					}
 					else {

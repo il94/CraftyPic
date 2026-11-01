@@ -1,3 +1,5 @@
+import { trackEvent } from "./analytics.js";
+
 const form = document.getElementsByClassName("window-form")[0];
 
 if (form) {
@@ -36,6 +38,7 @@ if (form) {
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4) {
 					if (xhr.status === 201) {
+						trackEvent("signin");
 						window.location.href = "/";
 					}
 					else {
@@ -72,6 +75,7 @@ if (form) {
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4) {
 					if (xhr.status === 201) {
+						trackEvent("password-forgot-request");
 						window.location.href = `/login/reinitialization-start?login=${encodeURIComponent(loginValue)}`;
 					}
 					else {
@@ -106,6 +110,7 @@ if (form) {
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4) {
 					if (xhr.status === 201) {
+						trackEvent("password-reset");
 						window.location.href = `/login/reinitialized`;
 					}
 					else {
@@ -146,6 +151,7 @@ if (form) {
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4) {
 					if (xhr.status === 201) {
+						trackEvent("signup");
 						window.location.href = `/signup/activation?email=${encodeURIComponent(emailValue)}`
 					}
 					else {

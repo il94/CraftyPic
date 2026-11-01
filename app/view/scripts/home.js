@@ -1,3 +1,5 @@
+import { trackEvent } from "./analytics.js";
+
 /* CREATE BUTTON */
 
 const createButtons = document.getElementsByClassName("create-button");
@@ -28,6 +30,7 @@ logoutButton?.addEventListener('click', () => {
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
+				trackEvent("logout");
 				window.location.href = "/login";
 			}
 			else {
@@ -63,6 +66,8 @@ deletePicForm?.addEventListener('submit', (event) => {
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
+				trackEvent("pic-delete");
+
 				const pics = Array.from(document.getElementsByClassName('pic'));
 				const pic = pics.find((pic) => pic.id === picId)
 

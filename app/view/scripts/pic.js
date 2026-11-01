@@ -1,4 +1,5 @@
 import { createComment, displayComment } from "./comment.js";
+import { trackEvent } from "./analytics.js";
 
 export function getRandomColor() {
 	const r = Math.floor(Math.random() * 256);
@@ -35,6 +36,8 @@ function postComment(pic, inputText, user) {
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 201) {
+				// Compteur seul : aucun contenu de commentaire n'est transmis.
+				trackEvent("comment-post");
 			}
 			else {
 				const response = JSON.parse(xhr.responseText);
@@ -223,12 +226,16 @@ export function createPic(picData, user) {
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4) {
 					if (xhr.status === 201) {
+						trackEvent("pic-like");
+
 						const likesCount = pic.querySelector('#likes-count');
 						const count = +likesCount.getAttribute('count') + 1;
 						likesCount.setAttribute('count', count);
 						likesCount.textContent = `${count} ${count < 2 ? 'like' : 'likes'}`
 					}
 					else if (xhr.status === 200) {
+						trackEvent("pic-unlike");
+
 						const likesCount = pic.querySelector('#likes-count');
 						const count = +likesCount.getAttribute('count') - 1;
 						likesCount.setAttribute('count', count);
